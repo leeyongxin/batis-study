@@ -2,8 +2,38 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.kuang.dao.UserDao">
-    <select id="getUserList" resultType="com.kuang.pojo.User" >
+<mapper namespace="com.kuang.dao.userMapper">
+    <!--    get list-->
+    <select id="getUserList" resultType="com.kuang.pojo.User">
     SELECT * FROM mybatis.user1
     </select>
+    <!--    create user-->
+    <insert id="addUser" parameterType="com.kuang.pojo.User">
+        insert into mybatis.user1 (mybatisid, name, wd) values (#{mybatisid},#{name},#{wd})
+    </insert>
+<!--    use map to add user-->
+    <insert id="addUser2" parameterType="map">
+        insert into mybatis.user1 (mybatisid, name) values (#{mpid},#{mpname})
+    </insert>
+
+    <!--read-->
+    <select id="getUserById" parameterType="int" resultType="com.kuang.pojo.User">
+        SELECT * FROM mybatis.user1 where mybatisid =#{id}
+    </select>
+
+    <!--update2-->
+    <update id="updateUser2" parameterType="map">
+        UPDATE mybatis.user1 SET name=#{mpname} WHERE mybatisid=#{mpid}
+    </update>
+    <delete id="deleteUser" parameterType="com.kuang.pojo.User">
+        DELETE FROM mybatis.user1 WHERE mybatisid=#{id}
+    </delete>
+
+    <!--    </insert>-->
+    <!--    <select id="getUserList" resultType="com.kuang.pojo.User" >-->
+    <!--    SELECT * FROM mybatis.user1-->
+    <!--    </select>-->
+    <!--    <select id="getUserList" resultType="com.kuang.pojo.User" >-->
+    <!--    SELECT * FROM mybatis.user1-->
+    <!--    </select>-->
 </mapper>

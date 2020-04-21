@@ -23,7 +23,6 @@ public class mybatisUtils {
         }
         sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
 
-
     }
 
     public static SqlSession getSqlSession() {
