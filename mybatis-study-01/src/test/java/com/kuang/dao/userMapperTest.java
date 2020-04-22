@@ -16,7 +16,7 @@ public class userMapperTest {
         SqlSession sqlSession = mybatisUtils.getSqlSession();
         userMapper mapper = sqlSession.getMapper(userMapper.class);
         List<User> userList = mapper.getUserList();
-
+        
         for (User user : userList) {
             System.out.println(user);
         }
