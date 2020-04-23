@@ -11,7 +11,7 @@
     <insert id="addUser" parameterType="com.kuang.pojo.User">
         insert into mybatis.user1 (mybatisid, name, wd) values (#{mybatisid},#{name},#{wd})
     </insert>
-<!--    use map to add user-->
+    <!--    use map to add user-->
     <insert id="addUser2" parameterType="map">
         insert into mybatis.user1 (mybatisid, name) values (#{mpid},#{mpname})
     </insert>

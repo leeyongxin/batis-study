@@ -9,10 +9,10 @@ import java.io.IOException;
 import java.io.InputStream;
 
 public class mybatisUtils {
-
     private static SqlSessionFactory sqlSessionFactory;
 
     static {
+
 
         String resource = "mybatis-config.xml";
         InputStream inputStream = null;
